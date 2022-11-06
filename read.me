@@ -1,0 +1,28 @@
+# Install virtual environment: 
+## mkvirtualenv nome -p python3.10
+## workon
+# Install Librarys:
+## pip install sqlalchemy
+## pip imstall psycopg2-binary, adaptador p bancos PostgreSQL.
+## pip install tqdm, biblioteca p criar barra de progresso:
+### Código de exemplo:
+### pip install time
+### from tqdm import tqdm
+### import time
+### for i in tq(range(20)):
+###   time.sleep(1)
+# pip frezze > nome_do_arq_txt
+
+
+
+Equivalência SQL <--> ORM
+--------------------------
+
+EQUALS     -   query(classe).filter(classe.atributo == "algo")
+NOT EQUALS -   query(classe).filter(classe.atributo != "algo")
+LIKE       -   query(classe).filter(classe.atributo.like("%algo%") )
+IN         -   query(classe).filter(classe.atributo.in_(["isso", "aquilo"]) )
+NOT IN     -   query(classe).filter(~classe.atributo.in_(["isso", "aquilo"]) )
+NULL       -   query(classe).filter(classe.atributo == None )
+AND        -   query(classe).filter(classe.atributo == "isso").filter(classe.atributo == "aquilo")
+OR         -   query(classe).filter(or_(classe.atributo == "isso",classe.atributo == "aquilo") )
