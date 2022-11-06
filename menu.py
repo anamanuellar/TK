@@ -1,6 +1,6 @@
 from tkinter import *
-from Models.cliente import Cliente
 from tela_clientes import telaClientes
+from tela_produtos import telaProdutos
 
 class MainMenu(Frame):
     def __init__(self, master = None, titulo=''):
@@ -52,7 +52,7 @@ class MainMenu(Frame):
         if cadastro == "Clientes":
             telaClientes(self.master)
         elif cadastro == "Produtos":
-            pass
+            telaProdutos(self.master)
 
 
     def sair(self):

@@ -3,24 +3,24 @@ import sqlalchemy as sa
 from datetime import datetime
 from Models.model_base import ModelBase
 
-class Cliente(ModelBase):
-    __tablename__:str = "Clientes"
+class Produto(ModelBase):
+    __tablename__:str = "Produtos"
 
-    matricula:int = sa.Column(sa.INTEGER, primary_key=True)
-    nome:str = sa.Column(sa.VARCHAR(200), nullable=False)
-    endereco:str = sa.Column(sa.VARCHAR(200))
-    email:str =  sa.Column(sa.VARCHAR(50))
-    telefone:str = sa.Column(sa.VARCHAR(50))
+    codigo:int = sa.Column(sa.INTEGER, primary_key=True)
+    descricao:str = sa.Column(sa.VARCHAR(200), nullable=False)
+    preco:float = sa.Column(sa.FLOAT)
+    estoqueMinimo:int =  sa.Column(sa.INTEGER)
+    estoqueAtual:int =  sa.Column(sa.INTEGER)
     data_cad: datetime = sa.Column(sa.DateTime, default=datetime.now, index=True)
     
     
     def __repr__(self) -> str:
-        return f"<Cliente: {self.nome}>"   
+        return f"<Produto: {self.nome}>"   
     
 '''
     Para testar:
     python
-    Models.cliente import Cliente
+    Models.produto import Produto
     cli=(nome="Carlos Gomes")
     print( cli )
 
